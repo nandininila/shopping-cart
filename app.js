@@ -39,11 +39,18 @@ document.getElementById("phone-minus").addEventListener("click", function () {
 */
 
 const phonePlus = document.getElementById("phone-plus");
-const phoneNumber = document.getElementById("phone-number");
-let phoneNumberValue = document.getElementById("phone-number").value
-const phoneNumberValueP = parseInt(phoneNumberValue);
-
 phonePlus.addEventListener("click", function () {
-  document.getElementById("phone-number").value = phoneNumberValueP + 1;
 
+  const phoneAmount = document.getElementById("phone-number");
+  const phoneNumber = parseInt(document.getElementById("phone-number").value);
+
+  let phonePrice = document.getElementById('phone-price').innerText;
+  let phPrice = parseFloat(document.getElementById('phone-price').innerText);
+
+  if (phoneNumber > 0) {
+
+  }
+  document.getElementById("phone-number").value = phoneNumber + 1;
+  document.getElementById('phone-price').innerText = (phoneNumber +1) * 1219;
+  
 });
