@@ -38,6 +38,8 @@ document.getElementById("phone-minus").addEventListener("click", function () {
 
 */
 
+
+
 document.getElementById("phone-plus").addEventListener("click", function () {
   
   //number
@@ -48,13 +50,13 @@ document.getElementById("phone-plus").addEventListener("click", function () {
   document.getElementById('phone-price').innerText = (phoneNumber + 1) * 1219;
 
   //sub-total
-  const phonePrice = parseFloat((document.getElementById("phone-price").innerText));
-  const casePrice = parseFloat((document.getElementById("case-price").innerText));
+  const phonePrice = parseInt((document.getElementById("phone-price").innerText));
+  const casePrice = parseInt((document.getElementById("case-price").innerText));
   document.getElementById("sub-total").innerText = phonePrice + casePrice;
 
   //total
-  const subTotal = parseFloat(document.getElementById("sub-total").innerText);
-  const tax = parseFloat(document.getElementById("tax").innerText);
+  const subTotal = parseInt(document.getElementById("sub-total").innerText);
+  const tax = parseInt(document.getElementById("tax").innerText);
   document.getElementById("total").innerText = subTotal + tax;
 
 
