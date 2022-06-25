@@ -39,12 +39,12 @@ document.getElementById("phone-minus").addEventListener("click", function () {
 */
 
 document.getElementById("phone-plus").addEventListener("click", function () {
-
+  
+  //number
   const phoneNumber = parseInt(document.getElementById("phone-number").value);
-
+  document.getElementById("phone-number").value = phoneNumber + 1;
   
   //phone price
-  document.getElementById("phone-number").value = phoneNumber + 1;
   document.getElementById('phone-price').innerText = (phoneNumber + 1) * 1219;
 
   //sub-total
