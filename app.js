@@ -38,19 +38,26 @@ document.getElementById("phone-minus").addEventListener("click", function () {
 
 */
 
-const phonePlus = document.getElementById("phone-plus");
-phonePlus.addEventListener("click", function () {
+document.getElementById("phone-plus").addEventListener("click", function () {
 
-  const phoneAmount = document.getElementById("phone-number");
   const phoneNumber = parseInt(document.getElementById("phone-number").value);
 
-  let phonePrice = document.getElementById('phone-price').innerText;
-  let phPrice = parseFloat(document.getElementById('phone-price').innerText);
-
-  if (phoneNumber > 0) {
-
-  }
+  
+  //phone price
   document.getElementById("phone-number").value = phoneNumber + 1;
-  document.getElementById('phone-price').innerText = (phoneNumber +1) * 1219;
+  document.getElementById('phone-price').innerText = (phoneNumber + 1) * 1219;
+
+  //sub-total
+  const phonePrice = parseFloat((document.getElementById("phone-price").innerText));
+  const casePrice = parseFloat((document.getElementById("case-price").innerText));
+  document.getElementById("sub-total").innerText = phonePrice + casePrice;
+
+  //total
+  const subTotal = parseFloat(document.getElementById("sub-total").innerText);
+  const tax = parseFloat(document.getElementById("tax").innerText);
+  document.getElementById("total").innerText = subTotal + tax;
+
+
+
   
 });
