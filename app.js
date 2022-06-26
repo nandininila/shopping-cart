@@ -38,6 +38,7 @@ document.getElementById("phone-minus").addEventListener("click", function () {
 
 */
 
+/** 
 document.getElementById("phone-plus").addEventListener("click", function () {
     const phoneInput = document.getElementById("phone-number");
     const phoneCount = parseInt(phoneInput.value);
@@ -53,6 +54,7 @@ document.getElementById("phone-plus").addEventListener("click", function () {
 
 
 });
+*/
 
 
 
@@ -63,7 +65,6 @@ document.getElementById("phone-plus").addEventListener("click", function () {
 
 
 
-/**
 
 document.getElementById("phone-plus").addEventListener("click", function () {
   
@@ -88,5 +89,3 @@ document.getElementById("phone-plus").addEventListener("click", function () {
 
   
 });
-
-*/
