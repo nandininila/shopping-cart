@@ -38,12 +38,6 @@ document.getElementById("phone-minus").addEventListener("click", function () {
 
 */
 
-/** 
-document.getElementById("phone-plus").addEventListener("click", function () {
-    const phoneInput = document.getElementById("phone-number");
-    const phoneCount = parseInt(phoneInput.value);
-    const phoneNewCount = phoneCount + 1;
-    phoneInput.value = phoneNewCount;
 
 
 
@@ -53,34 +47,47 @@ document.getElementById("phone-plus").addEventListener("click", function () {
 
 
 
-});
-*/
 
 
 
 
 
-//when phone plus button click
-document.getElementById("phone-plus").addEventListener("click", function () {
+
+
+
+
+
+
+
+function calculateTotal() {
   
-  //phone number
-  const phoneNumber = parseInt(document.getElementById("phone-number").value);
-  document.getElementById("phone-number").value = phoneNumber + 1;
-
-  
-  //phone price
-  document.getElementById('phone-price').innerText = (phoneNumber + 1) * 1219;
-
   //sub-total
   const phonePrice = parseInt((document.getElementById("phone-price").innerText));
   const casePrice = parseInt((document.getElementById("case-price").innerText));
   document.getElementById("sub-total").innerText = phonePrice + casePrice;
 
-  //total
+  //tax
   const subTotal = parseInt(document.getElementById("sub-total").innerText);
-  const tax = parseInt(document.getElementById("tax").innerText);
-  document.getElementById("total").innerText = subTotal + tax;
+  const tax = document.getElementById("tax");
+  document.getElementById("tax").innerText = subTotal / 10;
+  
+  //total
+  document.getElementById("total").innerText = subTotal + parseInt(tax.innerText);
+}
 
+
+//when phone plus button click
+document.getElementById("phone-plus").addEventListener("click", function () {
+  
+  //phone count
+  const phoneCount = parseInt(document.getElementById("phone-count").value);
+  document.getElementById("phone-count").value = phoneCount + 1;
+
+  //phone price
+  document.getElementById('phone-price').innerText = (phoneCount + 1) * 1219;
+
+  //call function
+  calculateTotal()
 });
 
 
@@ -88,50 +95,36 @@ document.getElementById("phone-plus").addEventListener("click", function () {
 //when case plus button click
 document.getElementById("case-plus").addEventListener("click", function () {
   
-  //case number
-  const caseNumber = parseInt(document.getElementById("case-number").value);
-  document.getElementById("case-number").value = caseNumber + 1;
+  //case count
+  const caseCount = parseInt(document.getElementById("case-count").value);
+  document.getElementById("case-count").value = caseCount + 1;
 
   //case price
-  document.getElementById('case-price').innerText = (caseNumber + 1) * 59;
+  document.getElementById('case-price').innerText = (caseCount + 1) * 59;
 
-   //sub-total
-   const phonePrice = parseInt((document.getElementById("phone-price").innerText));
-   const casePrice = parseInt((document.getElementById("case-price").innerText));
-   document.getElementById("sub-total").innerText = phonePrice + casePrice;
- 
-   //total
-   const subTotal = parseInt(document.getElementById("sub-total").innerText);
-   const tax = parseInt(document.getElementById("tax").innerText);
-   document.getElementById("total").innerText = subTotal + tax;
+  //call function
+  calculateTotal()
 });
+
 
 
 
 //when phone minus button click
 document.getElementById("phone-minus").addEventListener("click", function () {
   
-  //case number
-  const phoneNumber = parseInt(document.getElementById("phone-number").value);
-
+  //phone count
+  const phoneCount = parseInt(document.getElementById("phone-count").value);
   
-  if (phoneNumber > 0) {
-    document.getElementById("phone-number").value = phoneNumber - 1;
-
+  
+  if (phoneCount > 0) {
+    document.getElementById("phone-count").value = phoneCount - 1;
+  
   //phone price
-  document.getElementById('phone-price').innerText = (phoneNumber - 1) * 1219; 
+  document.getElementById('phone-price').innerText = (phoneCount - 1) * 1219;
   }
   
-
-  //sub-total
-  const phonePrice = parseInt((document.getElementById("phone-price").innerText));
-  const casePrice = parseInt((document.getElementById("case-price").innerText));
-  document.getElementById("sub-total").innerText = phonePrice + casePrice;
-
-  //total
-  const subTotal = parseInt(document.getElementById("sub-total").innerText);
-  const tax = parseInt(document.getElementById("tax").innerText);
-  document.getElementById("total").innerText = subTotal + tax;
+  //call function
+  calculateTotal()
 });
 
 
@@ -139,28 +132,40 @@ document.getElementById("phone-minus").addEventListener("click", function () {
 //when case minus button click
 document.getElementById("case-minus").addEventListener("click", function () {
   
-  //case number
-  const caseNumber = parseInt(document.getElementById("case-number").value);
-
+  //case count
+  const caseCount = parseInt(document.getElementById("case-count").value);
   
-  if (caseNumber > 0) {
-    document.getElementById("case-number").value = caseNumber - 1;
+  if (caseCount > 0) {
+    document.getElementById("case-count").value = caseCount - 1;
 
   //case price
-  document.getElementById('case-price').innerText = (caseNumber - 1) * 59; 
+  document.getElementById('case-price').innerText = (caseCount - 1) * 59;
   }
   
-
-  //sub-total
-  const phonePrice = parseInt((document.getElementById("phone-price").innerText));
-  const casePrice = parseInt((document.getElementById("case-price").innerText));
-  document.getElementById("sub-total").innerText = phonePrice + casePrice;
-
-  //total
-  const subTotal = parseInt(document.getElementById("sub-total").innerText);
-  const tax = parseInt(document.getElementById("tax").innerText);
-  document.getElementById("total").innerText = subTotal + tax;
+  //call function
+  calculateTotal()
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -235,6 +240,5 @@ function calculateTotal() {
 //...................................................................................
 
 */
-
 
 
